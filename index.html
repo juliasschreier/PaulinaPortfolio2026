@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paulina Rodriguez-Toymil Valle | Portfolio 2026</title>
+
+<!-- Editorial typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --background: #f5f2eb;
+  --text: #25241f;
+  --muted: #77736b;
+  --line: #d9d4c9;
+  --accent: #8a725b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+/* NAVIGATION */
+
+header {
+  padding: 28px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgb(96, 150, 167);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* HERO SECTION */
+
+.hero {
+  padding: 100px 12%;
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 4.2vw, 60px);
+  line-height: 1.2;
+  max-width: 600px;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 480px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 90px 12%;
+  border-top: 1px solid var(--line);
+  max-width: 1400px;
+  margin: auto;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+section h2 {
+  font-size: 42px;
+  margin-bottom: 25px;
+}
+
+.intro {
+  max-width: 650px;
+  font-size: 16px;
+}
+
+/* WRITING SAMPLES */
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 45px;
+  margin-top: 40px;
+}
+
+.work-card {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.work-card span {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.work-card h3 {
+  font-size: 27px;
+  margin: 12px 0;
+}
+
+.work-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.work-card a {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 4px;
+}
+
+/* ABOUT */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.about h2 {
+  font-size: 48px;
+}
+
+.about p {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* CONTACT */
+
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 50px;
+}
+
+.contact a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+
+.contact a:hover {
+  color: var(--accent);
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 8%;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  header {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  nav {
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 60px 7%;
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 9vw, 48px);
+    line-height: 1.15;
+  }
+
+  section {
+    padding: 65px 7%;
+  }
+
+  .works-grid,
+  .about {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+
+  <div class="logo">Paulina Rodriguez-Toymil Valle</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#writing">Writing</a>
+    <a href="#interests">Interests</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+</header>
+
+<!-- HOMEPAGE / HERO -->
+
+<main>
+
+<div class="hero" id="home">
+
+  <img
+    class="hero-image"
+    src="PauPhoto.JPG"
+    alt="Paulina Rodriguez-Toymil Valle"
+  >
+
+  <div class="hero-content">
+
+    <h1>
+      Puerto Rican writer passionate about exploring different perspectives through literature
+    </h1>
+
+  </div>
+
+</div>
+
+<!-- INTRODUCTION -->
+
+<section id="interests">
+
+  <div class="section-label">01 — Introduction</div>
+
+  <h2>The importance of stories.</h2>
+
+  <p class="intro">
+    This portfolio is a selection of Paulina's academic and personal writing, reflecting her interests in literature, literary criticism, and the written word. As a writer and thinker, she seeks to use critical thought and imagination to produce compelling and intellectually stimulating work.
+  </p>
+
+</section>
+
+<!-- WRITING -->
+
+<section id="writing">
+
+  <div class="section-label">02 — Selected Writing</div>
+
+  <h2>Works & Writings.</h2>
+
+  <p class="intro">
+    A selection of academic and personal writing
+    developed through my studies and independent
+    literary interests.
+  </p>
+
+  <div class="works-grid">
+
+    <div class="work-card">
+
+      <span>ACADEMIC · LITERARY ANALYSIS</span>
+
+      <h3>Literary Analysis</h3>
+
+      <p>
+        An exploration of literature, narrative,
+        and the relationship between text and historical context.
+      </p>
+
+      <a href="https://drive.google.com/file/d/1qax-c6C4fCcpQUQz9_knUuuC7pWTuVNF/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        Read Essay →
+      </a>
+
+    </div>
+
+    <div class="work-card">
+
+      <span>CREATIVE · PERSONAL WRITING</span>
+
+      <h3>Creative Writing</h3>
+
+      <p>
+        Selected creative work reflecting my interests
+        in identity, storytelling, and expression.
+      </p>
+
+      <a href="https://drive.google.com/file/d/1rmXNokzsK0mLGpk3B8IEy1-vJDulSgaT/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        Read Work →
+      </a>
+
+    </div>
+
+    <div class="work-card">
+
+      <span>CREATIVE · TRAVEL WRITING</span>
+
+      <h3>Short Stories</h3>
+
+      <p>
+        A selection of short form creative work demonstrating
+        narrative skill and strong sense of place.
+      </p>
+
+      <a href="https://drive.google.com/file/d/1bO9OTJLSJzx9JBmoIV97D8tII9WlWPtV/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        View Project →
+      </a>
+
+    </div>
+
+    <div class="work-card">
+
+      <span>LITERARY · REVIEW</span>
+
+      <h3>Literary Criticism</h3>
+
+      <p>
+        Reflections on selected works and the
+        literary ideas that continue to inspire me.
+      </p>
+
+      <a href="https://drive.google.com/file/d/1zAfxRIBUppaR3qlcIwwXUQrCPPnJF9Lp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        Read Review →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="about">
+
+    <div>
+
+      <div class="section-label">03 — About</div>
+
+      <h2>A little about me.</h2>
+
+    </div>
+
+    <div>
+
+      <p>
+        Paulina is a senior at The New School pursuing her B.A. in Literary Studies with a concentration in Literature and Critical Analysis.
+      </p>
+
+      <p>
+        Born and raised in Puerto Rico, her culture and identity informs her work and the perspective she brings to literary criticism and theory.
+      </p>
+
+      <p>
+        Inspired by authors like bell hooks, Kaveh Akbar, Julia de Burgos, and James Baldwin, Paulina hopes to continue her academic and professional career through the world of books. Particularly interested in the publishing industry, she hopes to contribute to the process of bringing meaningful literary works to readers.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="section-label">04 — Get in Touch</div>
+
+  <h2>Let's connect.</h2>
+
+  <p class="intro" style="margin: 0 auto 25px;">
+    Thank you for taking the time to explore my work.
+    I welcome opportunities to connect and collaborate.
+  </p>
+
+  <a href="mailto:ptoymil14@gmail.com">
+    ptoymil14@gmail.com
+  </a>
+  <br>
+  <br>
+  
+  <p class="intro2" style="margin: 0 auto 25px;">
+    +1 787 506 8050
+  </p>
+
+  <a href="https://www.linkedin.com/in/paulina-rodriguez-toymil-valle-720283273/" target="_blank" rel="noopener noreferrer">
+    LinkedIn
+  </a>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <span>PORTFOLIO · 2026</span>
+
+  <span>PAULINA RODRIGUEZ-TOYMIL VALLE</span>
+
+  <span>THE NEW SCHOOL</span>
+
+</footer>
+
+</body>
+</html>
