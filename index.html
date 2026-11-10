@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paulina Rodriguez-Toymil Valle | Portfolio 2026</title>
 
-<!-- Editorial typography -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
@@ -91,7 +90,7 @@ nav a:hover {
 .hero-image {
   display: block;
   width: 100%;
-  height: 520px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -110,7 +109,7 @@ h1, h2, h3 {
 }
 
 .hero h1 {
-  font-size: clamp(38px, 4.2vw, 60px);
+  font-size: clamp(50px, 4.2vw, 40px);
   line-height: 1.2;
   max-width: 600px;
   margin-bottom: 25px;
@@ -189,6 +188,233 @@ section h2 {
   letter-spacing: 1px;
   border-bottom: 1px solid var(--accent);
   padding-bottom: 4px;
+}
+
+/* ART GALLERY */
+
+.gallery-section {
+  overflow: hidden;
+}
+
+.gallery-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.gallery-heading h2 {
+  margin-bottom: 10px;
+}
+
+.gallery-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.gallery-controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.gallery-arrow {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+
+.gallery-arrow:hover {
+  background: var(--text);
+  color: white;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 18px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--line);
+  cursor: grab;
+}
+
+.gallery-track:active {
+  cursor: grabbing;
+}
+
+.gallery-track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.gallery-track::-webkit-scrollbar-track {
+  background: var(--line);
+}
+
+.gallery-track::-webkit-scrollbar-thumb {
+  background: var(--accent);
+}
+
+.artwork-card {
+  flex: 0 0 32%;
+  min-width: 230px;
+  scroll-snap-align: start;
+  border: none;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.artwork-image {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  background: #e7e2d9;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.artwork-card:hover .artwork-image {
+  opacity: 0.85;
+}
+
+.artwork-caption {
+  padding-top: 14px;
+}
+
+.artwork-caption h3 {
+  font-size: 19px;
+  margin-bottom: 3px;
+}
+
+.artwork-caption p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.artwork-view {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(25, 24, 21, 0.94);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 68vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-caption {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+.lightbox-caption h3 {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.lightbox-caption .artist {
+  font-size: 12px;
+  color: #c9c2b7;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.lightbox-caption .description {
+  font-size: 14px;
+  color: #ddd8d0;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 35px;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255,255,255,0.5);
+  color: white;
+  background: rgba(0,0,0,0.15);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-counter {
+  color: #c9c2b7;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 12px;
 }
 
 /* ABOUT */
@@ -288,6 +514,40 @@ footer {
     gap: 35px;
   }
 
+  .gallery-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .artwork-card {
+    flex: 0 0 78%;
+  }
+
+  .artwork-image {
+    height: 320px;
+  }
+
+  .lightbox {
+    padding: 20px;
+  }
+
+  .lightbox-image {
+    max-height: 55vh;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 15px;
+  }
+
+  .lightbox-prev {
+    left: 5px;
+  }
+
+  .lightbox-next {
+    right: 5px;
+  }
+
   footer {
     flex-direction: column;
     gap: 10px;
@@ -304,22 +564,20 @@ footer {
 <!-- NAVIGATION -->
 
 <header>
-
   <div class="logo">Paulina Rodriguez-Toymil Valle</div>
 
   <nav>
     <a href="#home">Home</a>
     <a href="#writing">Writing</a>
-    <a href="#interests">Interests</a>
+    <a href="#gallery">Art Gallery</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-
 </header>
 
-<!-- HOMEPAGE / HERO -->
-
 <main>
+
+<!-- HERO -->
 
 <div class="hero" id="home">
 
@@ -330,11 +588,9 @@ footer {
   >
 
   <div class="hero-content">
-
     <h1>
-      Puerto Rican writer passionate about exploring different perspectives through literature
+      Puerto Rican multidisciplinary artist passionate about exploring different perspectives through literature, and art.
     </h1>
-
   </div>
 
 </div>
@@ -345,10 +601,10 @@ footer {
 
   <div class="section-label">01 — Introduction</div>
 
-  <h2>The importance of stories.</h2>
+  <h2>Welcome!</h2>
 
   <p class="intro">
-    This portfolio is a selection of Paulina's academic and personal writing, reflecting her interests in literature, literary criticism, and the written word. As a writer and thinker, she seeks to use critical thought and imagination to produce compelling and intellectually stimulating work.
+    This portfolio is a selection of Paulina's academic and personal writing, reflecting her interests in literature, literary criticism, and the written word. As well as some additional works from her artistic practice. As a writer and thinker, she seeks to use critical thought and imagination to produce compelling and intellectually stimulating work.
   </p>
 
 </section>
@@ -362,97 +618,212 @@ footer {
   <h2>Works & Writings.</h2>
 
   <p class="intro">
-    A selection of academic and personal writing
-    developed through my studies and independent
-    literary interests.
+    A selection of academic and personal writing developed through my studies and independent literary interests.
   </p>
 
   <div class="works-grid">
 
     <div class="work-card">
-
       <span>ACADEMIC · LITERARY ANALYSIS</span>
-
       <h3>Literary Analysis</h3>
-
       <p>
         An exploration of literature, narrative,
         and the relationship between text and historical context.
       </p>
-
       <a href="https://drive.google.com/file/d/1qax-c6C4fCcpQUQz9_knUuuC7pWTuVNF/view?usp=sharing" target="_blank" rel="noopener noreferrer">
         Read Essay →
       </a>
-
     </div>
 
     <div class="work-card">
-
       <span>CREATIVE · PERSONAL WRITING</span>
-
       <h3>Creative Writing</h3>
-
       <p>
         Selected creative work reflecting my interests
         in identity, storytelling, and expression.
       </p>
-
       <a href="https://drive.google.com/file/d/1rmXNokzsK0mLGpk3B8IEy1-vJDulSgaT/view?usp=sharing" target="_blank" rel="noopener noreferrer">
         Read Work →
       </a>
-
     </div>
 
     <div class="work-card">
-
       <span>CREATIVE · TRAVEL WRITING</span>
-
       <h3>Short Stories</h3>
-
       <p>
         A selection of short form creative work demonstrating
         narrative skill and strong sense of place.
       </p>
-
       <a href="https://drive.google.com/file/d/1bO9OTJLSJzx9JBmoIV97D8tII9WlWPtV/view?usp=sharing" target="_blank" rel="noopener noreferrer">
         View Project →
       </a>
-
     </div>
 
     <div class="work-card">
-
       <span>LITERARY · REVIEW</span>
-
       <h3>Literary Criticism</h3>
-
       <p>
         Reflections on selected works and the
         literary ideas that continue to inspire me.
       </p>
-
       <a href="https://drive.google.com/file/d/1zAfxRIBUppaR3qlcIwwXUQrCPPnJF9Lp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
         Read Review →
       </a>
-
     </div>
 
   </div>
 
 </section>
 
+<!-- ART GALLERY -->
+
+<section id="gallery" class="gallery-section">
+
+  <div class="section-label">03 — Visual Collection</div>
+
+  <div class="gallery-heading">
+
+    <div>
+      <h2>Additional Art</h2>
+      <p>A collection of artworks that Paulina has created, that speaks to the rest of her works.</p>
+    </div>
+
+    <div class="gallery-controls">
+      <button class="gallery-arrow" id="galleryPrev" aria-label="Scroll gallery left">←</button>
+      <button class="gallery-arrow" id="galleryNext" aria-label="Scroll gallery right">→</button>
+    </div>
+
+  </div>
+
+  <div class="gallery-track" id="galleryTrack">
+
+    <!-- ARTWORK 1 -->
+    <button class="artwork-card"
+      data-image="marchiquita.png" 
+      data-title="Mar Chiquita"
+      data-artist="2022"
+      data-description="Graphite on Paper"
+      aria-label="View Artwork Title One">
+
+      <img class="artwork-image" src="marchiquita.png" alt="Artwork Title One">
+
+      <div class="artwork-caption">
+        <h3>Mar Chiquita</h3>
+        <p>2022</p>
+        <span class="artwork-view">View artwork ↗</span>
+      </div>
+    </button>
+
+    <!-- ARTWORK 2 -->
+    <button class="artwork-card"
+      data-image="tostonera.HEIC"
+      data-title="Tostonera"
+      data-artist="2026"
+      data-description="Oil on canvas"
+      aria-label="View Artwork Title Two">
+
+      <img class="artwork-image" src="tostonera.HEIC" alt="Artwork Title Two">
+
+      <div class="artwork-caption">
+        <h3>Tostonera</h3>
+        <p>2026</p>
+        <span class="artwork-view">View artwork ↗</span>
+      </div>
+    </button>
+
+    <!-- ARTWORK 3 -->
+    <button class="artwork-card"
+      data-image="beautyparlorkitchen.HEIC"
+      data-title="Beauty Parlor Kitchen"
+      data-artist="2023"
+      data-description="Acrtlic on wood panel"
+      aria-label="View Artwork Title Three">
+
+      <img class="artwork-image" src="beautyparlorkitchen.HEIC" alt="Artwork Title Three">
+
+      <div class="artwork-caption">
+        <h3>Beauty Parlor Kitchen</h3>
+        <p>2023</p>
+        <span class="artwork-view">View artwork ↗</span>
+      </div>
+    </button>
+
+    <!-- ARTWORK 4 -->
+    <button class="artwork-card"
+      data-image="overtheshoulder.jpeg"
+      data-title="Impose"
+      data-artist="2023"
+      data-description="Linocut on paper"
+      aria-label="View Artwork Title Four">
+
+      <img class="artwork-image" src="overtheshoulder.jpeg" alt="Artwork Title Four">
+
+      <div class="artwork-caption">
+        <h3>Impose</h3>
+        <p>2023</p>
+        <span class="artwork-view">View artwork ↗</span>
+      </div>
+    </button>
+
+    <!-- ARTWORK 5 -->
+    <button class="artwork-card"
+      data-image="susha_en_casa.jpeg"
+      data-title="Susha en Casa"
+      data-artist="2026"
+      data-description="Oil on canvas"
+      aria-label="View Artwork Title Five">
+
+      <img class="artwork-image" src="susha_en_casa.jpeg" alt="Artwork Title Five">
+
+      <div class="artwork-caption">
+        <h3>Susha en Casa</h3>
+        <p>2026</p>
+        <span class="artwork-view">View artwork ↗</span>
+      </div>
+    </button>
+
+  </div>
+
+</section>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox"
+  role="dialog" aria-modal="true" aria-label="Artwork viewer"
+  aria-hidden="true">
+
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">×</button>
+
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous artwork">←</button>
+
+  <div class="lightbox-content">
+
+    <img class="lightbox-image" id="lightboxImage" src="" alt="">
+
+    <div class="lightbox-caption">
+      <h3 id="lightboxTitle"></h3>
+      <p class="artist" id="lightboxArtist"></p>
+      <p class="description" id="lightboxDescription"></p>
+    </div>
+
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+
+  </div>
+
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next artwork">→</button>
+
+</div>
+
 <!-- ABOUT -->
 
 <section id="about">
 
+  <div class="section-label">04 — About</div>
+
   <div class="about">
 
     <div>
-
-      <div class="section-label">03 — About</div>
-
       <h2>A little about me.</h2>
-
     </div>
 
     <div>
@@ -479,7 +850,7 @@ footer {
 
 <section class="contact" id="contact">
 
-  <div class="section-label">04 — Get in Touch</div>
+  <div class="section-label">05 — Get in Touch</div>
 
   <h2>Let's connect.</h2>
 
@@ -491,9 +862,9 @@ footer {
   <a href="mailto:ptoymil14@gmail.com">
     ptoymil14@gmail.com
   </a>
-  <br>
-  <br>
-  
+
+  <br><br>
+
   <p class="intro2" style="margin: 0 auto 25px;">
     +1 787 506 8050
   </p>
@@ -509,14 +880,142 @@ footer {
 <!-- FOOTER -->
 
 <footer>
-
   <span>PORTFOLIO · 2026</span>
-
   <span>PAULINA RODRIGUEZ-TOYMIL VALLE</span>
-
   <span>THE NEW SCHOOL</span>
-
 </footer>
+
+<script>
+
+/* HORIZONTAL GALLERY SCROLL */
+
+const galleryTrack = document.getElementById('galleryTrack');
+
+document.getElementById('galleryPrev').addEventListener('click', () => {
+  galleryTrack.scrollBy({
+    left: -galleryTrack.clientWidth * 0.75,
+    behavior: 'smooth'
+  });
+});
+
+document.getElementById('galleryNext').addEventListener('click', () => {
+  galleryTrack.scrollBy({
+    left: galleryTrack.clientWidth * 0.75,
+    behavior: 'smooth'
+  });
+});
+
+/* LIGHTBOX */
+
+const artworks = Array.from(document.querySelectorAll('.artwork-card'));
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxArtist = document.getElementById('lightboxArtist');
+const lightboxDescription = document.getElementById('lightboxDescription');
+const lightboxCounter = document.getElementById('lightboxCounter');
+
+let currentArtwork = 0;
+let lastFocusedElement = null;
+
+function showArtwork(index) {
+
+  currentArtwork = (index + artworks.length) % artworks.length;
+
+  const artwork = artworks[currentArtwork];
+
+  lightboxImage.src = artwork.dataset.image;
+  lightboxImage.alt = artwork.querySelector('img').alt;
+
+  lightboxTitle.textContent = artwork.dataset.title;
+  lightboxArtist.textContent = artwork.dataset.artist;
+  lightboxDescription.textContent = artwork.dataset.description;
+
+  lightboxCounter.textContent =
+    `${currentArtwork + 1} / ${artworks.length}`;
+
+}
+
+function openLightbox(index) {
+
+  lastFocusedElement = document.activeElement;
+
+  showArtwork(index);
+
+  lightbox.classList.add('active');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  document.getElementById('lightboxClose').focus();
+
+}
+
+function closeLightbox() {
+
+  lightbox.classList.remove('active');
+  lightbox.setAttribute('aria-hidden', 'true');
+
+  document.body.style.overflow = '';
+
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
+
+}
+
+artworks.forEach((artwork, index) => {
+
+  artwork.addEventListener('click', () => {
+    openLightbox(index);
+  });
+
+});
+
+document.getElementById('lightboxClose')
+  .addEventListener('click', closeLightbox);
+
+document.getElementById('lightboxPrev')
+  .addEventListener('click', () => {
+    showArtwork(currentArtwork - 1);
+  });
+
+document.getElementById('lightboxNext')
+  .addEventListener('click', () => {
+    showArtwork(currentArtwork + 1);
+  });
+
+/* CLOSE WHEN CLICKING OUTSIDE THE IMAGE */
+
+lightbox.addEventListener('click', (event) => {
+
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+
+});
+
+/* KEYBOARD NAVIGATION */
+
+document.addEventListener('keydown', (event) => {
+
+  if (!lightbox.classList.contains('active')) return;
+
+  if (event.key === 'Escape') {
+    closeLightbox();
+  }
+
+  if (event.key === 'ArrowRight') {
+    showArtwork(currentArtwork + 1);
+  }
+
+  if (event.key === 'ArrowLeft') {
+    showArtwork(currentArtwork - 1);
+  }
+
+});
+
+</script>
 
 </body>
 </html>
